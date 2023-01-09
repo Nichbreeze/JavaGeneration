@@ -1,0 +1,123 @@
+package desenvolvimentoPOO;
+
+public class Cliente {
+
+	private String nome;
+	protected String rg;
+	private String cpf;
+	
+	public Cliente() {}
+	public Cliente(String nome, String rg, String cpf) {
+		super();
+		this.nome = nome;
+		this.rg = rg;
+		this.cpf = cpf;		
+	}
+
+	public void visualizar1() {}
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getRg() {
+		return rg;
+	}
+
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+
+	public String getCpf() {
+		return cpf;
+	}
+
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public void setSalario(int nextInt) {
+		
+	}
+
+	}
+	
+
+------ 
+
+package desenvolvimentoPOO;
+
+public class pessoaFisica extends Cliente {
+	
+	private int salario;
+	private int impostoPF;
+	
+	public pessoaFisica(String nome, String rg, String cpf, int salario, int impostoPF) {
+	 
+	    super(nome,rg,cpf);
+		this.salario = salario;
+		this.impostoPF = impostoPF;
+		
+		
+				
+	}
+
+	public int getSalario() {
+		return salario;
+	}
+
+	public void setSalario(int salario) {
+		this.salario = salario;
+	}
+
+	public int getImpostoPF() {
+		return impostoPF;
+	}
+
+	public void setImpostoPF(int impostoPF) {
+		this.impostoPF = impostoPF;
+	}
+	
+	public void imprimirInfo() {
+		System.out.println("\n Nome: " +getNome()+"\n RG :"+getRg()+"\n Cpf : "+getCpf()+"\nSalario: "+salario+"\n valor de imposto a pagar : " +impostoPF);
+	}
+      public void calcularSalario() {
+		double salario_total = salario - (salario * (impostoPF/100));
+		System.out.println("\nsalario liq a ser recebido pelo empregado: " +getNome()+ "\n igual :" +salario_total);}
+		
+	public void visualizar() {
+		System.out.println("\n Nome: " +getNome()+"\n RG :"+getRg()+"\n Cpf : "+getCpf()+"\nSalario: "+salario+"\n valor de imposto a pagar : " +impostoPF);
+		
+	}
+	
+}
+
+
+------- package desenvolvimentoPOO;
+
+import java.util.*;
+
+public class ClienteTeste {
+
+	public static void main(String[] args) {
+		Scanner ler = new Scanner (System.in);
+		
+		Cliente poo = new pessoaFisica(null, null, null, 0, 0); 
+		System.out.println("\nDigite seu nome: ");
+		poo.setNome(ler.next());
+		System.out.println("\nDigite seu rg: ");
+		poo.setRg(ler.next());
+		System.out.println("\nDigite seu CPF: ");
+		poo.setCpf(ler.next());
+
+		poo.visualizar1(System.out.println("\n Nome: " +getNome()+"\n RG :"+getRg()+"\n Cpf : "+getCpf()+"\nSalario: "+salario()+"\n valor de imposto a pagar : " +impostoPF()+);
+	  
+	}
+}
